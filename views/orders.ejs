@@ -1,0 +1,34 @@
+<%- include('./includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+<%- include('./includes/navigation.ejs') %>
+
+<main>
+    <div class="grid">
+        <%
+        for (var i = 0; i < orderData.length; i++) {
+        %>
+        <article class="card product-item">
+            <header class="card__header">
+                <h1 class="product__title">
+                    <%=orderData[i].title%>
+                </h1>
+            </header>
+            <div class="card__image">
+                <img src="<%=orderData[i].image%>" width="50" height="150" alt="apple">
+            </div>
+            <div class="card__content">
+                <h2 class="product__price">$ <%=orderData[i].price%>
+                </h2>
+                <p class="product__description">
+                    Qt Ord: <%=orderData[i].quantity%>
+                </p>
+            </div>
+        </article>
+        <%}%>
+    </div>
+</main>
+<%- include('./includes/end.ejs') %>
