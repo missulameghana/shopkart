@@ -189,6 +189,9 @@ form {
   background: white;
   border-radius: 3px;
   cursor: pointer;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%
 }
 
 .btn:hover,
