@@ -7,7 +7,7 @@
 <%- include('./includes/navigation.ejs') %>
 
 <main>
-    <div class="grid">
+    <div class="grid" method="POST">
         <%
         for (var i = 0; i < prodData.length; i++) {
         %>
@@ -20,14 +20,18 @@
             <div class="card__image">
                 <img src="<%=prodData[i].image%>" width="50" height="150" alt="apple">
             </div>
-            <div class="card__content">
+            <div class="card__content" >
                 <h2 class="product__price">Price: <%=prodData[i].price%>
                 </h2>
                 <p class="product__description">
                     Quantity: <%=prodData[i].quantity%>
                 </p>
             </div>
-            <button class="btn" type="submit">Add to Cart</button>
+
+            <form action="/prods" method="POST">
+                <button class="btn" type="submit" >Add to Cart</button>
+                <input type = "hidden" name="product_id" value="<%=prodData[i].id%>">
+            </form>
         </article>
         <%}%>
     </div>
